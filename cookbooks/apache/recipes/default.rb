@@ -15,6 +15,7 @@ execute 'disable welcome' do
 	command 'mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.disabled'
 	only_if { File.exists?('/etc/httpd/conf.d/welcome.conf') }
 	notifies :restart, 'service[httpd]'
+	action :run
 end
 
 node['apache']['sites'].each do |site_name, site_data|
@@ -28,6 +29,7 @@ node['apache']['sites'].each do |site_name, site_data|
 			:port => site_data['port']
 		)
 		notifies :restart, 'service[httpd]'
+		action :create
 	end
 
 	directory document_root do
@@ -42,6 +44,7 @@ node['apache']['sites'].each do |site_name, site_data|
 			:site_name => site_name,
 			:port => site_data['port']
 		)
+		action :create
 	end
 end
 
