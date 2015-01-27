@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: users
-# Recipe:: default
+# Recipe:: groups
 #
 # Copyright 2015 Kartik Null Cating-Subramanian
 # 
@@ -16,15 +16,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-search('users', '*:*').each do |user_data|
-	user user_data['id'] do
-		action :create
-		comment user_data['comment']
-		uid user_data['uid']
-		gid user_data['gid']
-		home user_data['home']
-		shell user_data['shell']
+search('groups', '*:*').each do |group_data|
+	group group_data['id'] do
+		gid group_data['gid']
+		members group_data['members']
 	end
 end
-
-include_recipe 'users::groups'
