@@ -1,1 +1,1 @@
-default["motd"]["company"] = "Chef"
+default['motd']['company'] = 'Chef'

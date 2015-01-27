@@ -1,5 +1,5 @@
 name             'motd'
-maintainer       'Kartik Cating-Subramanian'
+maintainer       'Kartik Null Cating-Subramanian'
 maintainer_email 'ksubramanian@chef.io'
 license          'All rights reserved'
 description      'Installs/Configures motd'

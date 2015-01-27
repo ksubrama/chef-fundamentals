@@ -2,7 +2,7 @@
 # Cookbook Name:: pci
 # Recipe:: default
 #
-# Copyright 2015, YOUR_COMPANY_NAME
+# Copyright 2015, Kartik Null Cating-Subramanian
 #
 # All rights reserved - Do Not Redistribute
 #
